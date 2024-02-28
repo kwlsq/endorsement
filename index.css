@@ -1,0 +1,135 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ebebeb;
+    color: #FFFFFF;
+    font-family: inter;
+    user-select: none;
+}
+
+main {
+    max-width: 360px;
+    padding: 25px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #1B1924;
+    min-height: 100vh;
+    max-height: 150vh;
+    box-sizing: border-box;
+}
+
+main h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#txtarea-endorsement {
+    width: 100%;
+    resize: none;
+    height: 120px;
+    display: block;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    margin: 10px 0;
+}
+
+#input-from,
+#input-to {
+    width: 50%;
+    text-align: center;
+}
+
+#txtarea-endorsement,
+#input-from,
+#input-to {
+    background-color: #444059;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+#txtarea-endorsement::placeholder,
+#input-from::placeholder,
+#input-to::placeholder {
+    color: #8F8F8F;
+}
+
+#btn-publish {
+    background-color: #28A9F1;
+    color: #04131C;
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#btn-publish:disabled {
+    background-color: #bec2c4;
+    color: #04131C;
+}
+
+#btn-publish:disabled:hover {
+    cursor: not-allowed;
+}
+
+#btn-publish:hover {
+    cursor: pointer;
+}
+
+h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#endorsement-container {
+    max-height: 60vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.endorsement-item {
+    background-color: #FFFFFF;
+    color: #1B1924;
+    padding: 15px;
+    font-size: 12px;
+    text-align: start;
+    box-sizing: border-box;
+    font-family: inter;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.endorsement-item p {
+    font-family: inter;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+}
+
+.endorsement-item-footer,
+.endorsement-likes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.endorsement-likes p {
+    font-size: 16px;
+    margin-left: 5px;
+}
