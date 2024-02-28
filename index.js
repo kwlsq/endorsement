@@ -18,9 +18,9 @@ const btnPublish = document.getElementById("btn-publish")
 const endorsementContainer = document.getElementById("endorsement-container")
 
 // Localstorage Init
-let likedIDsByApp = JSON.parse(localStorage.getItem("likedIDs"))
-if (!likedIDsByApp) {
-    localStorage.setItem("likedIDs", JSON.stringify([]))
+let likedIDsByApp = []
+if (JSON.parse(localStorage.getItem("likedIDs"))) {
+    likedIDsByApp = JSON.parse(localStorage.getItem("likedIDs"))
 }
 
 // Event listener on elements
@@ -38,7 +38,7 @@ onValue(endorsementListInDB, function (snapshot) {
     const snapshotValue = snapshot.val()
     if (snapshot.exists()) {
         clearendorsementContainer()
-
+        // reverse the array order so newest data always on top
         let itemsArray = Object.entries(snapshotValue).reverse()
         for (let i = 0; i < itemsArray.length; i++) {
             createEndorsementItemElement(itemsArray[i])
@@ -110,7 +110,6 @@ function createEndorsementItemElement(endorsement) {
             let indexOfLikedEndorsement = likedIDsByApp.indexOf(endorsementID)
             likedIDsByApp.splice(indexOfLikedEndorsement, 1)
         } else {
-
             updates = { ...endorsementValue, totalLikes: endorsementValue.totalLikes += 1 }
             likedIDsByApp.push(endorsementID)
         }
